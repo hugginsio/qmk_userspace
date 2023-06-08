@@ -18,6 +18,7 @@ jobs:
         file:
           - crkbd
           - iris
+          - kbd75
     steps:
       - name: Disable git safe directory checks
         run: git config --global --add safe.directory '*'
