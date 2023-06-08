@@ -19,6 +19,7 @@ RGBLIGHT_ENABLE = no
 RGB_MATRIX_DRIVER = WS2812
 RGB_MATRIX_ENABLE = no
 SPACE_CADET_ENABLE = no
+SPLIT_KEYBOARD = yes
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), crkbd/rev1))
     MOUSEKEY_ENABLE = yes
@@ -31,5 +32,5 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), keebio/iris/rev6))
 endif
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), kbdfans/kbd75/rev1))
-    SPLIT_KEYBOARD = yes
+    SPLIT_KEYBOARD = no
 endif
