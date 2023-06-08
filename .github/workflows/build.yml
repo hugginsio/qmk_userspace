@@ -41,3 +41,8 @@ jobs:
             *.hex
             *.bin
             *.uf2
+          retention-days: 30
+      - name: Remove old firmware
+        uses: jimschubert/delete-artifacts-action@v1
+        with:
+          active_duration: 5m
