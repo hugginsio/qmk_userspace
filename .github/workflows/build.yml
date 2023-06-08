@@ -16,7 +16,8 @@ jobs:
       fail-fast: false
       matrix:
         file:
-          - crkbd.json
+          - crkbd
+          - iris
     steps:
       - name: Disable git safe directory checks
         run: git config --global --add safe.directory '*'
@@ -30,7 +31,7 @@ jobs:
         with:
           path: users/${{ github.actor }}
       - name: Build firmware
-        run: qmk compile "users/${{ github.actor }}/keymaps/${{ matrix.file }}"
+        run: qmk compile "users/${{ github.actor }}/keymaps/${{ matrix.file }}.json"
       - name: Archive firmware
         uses: actions/upload-artifact@v3
         continue-on-error: true
