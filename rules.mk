@@ -36,4 +36,4 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), kbdfans/kbd75/rev1))
     SPLIT_KEYBOARD = no
 endif
 
-SRC += source.c
+SRC += common.c
