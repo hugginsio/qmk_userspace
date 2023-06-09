@@ -1,5 +1,3 @@
-SRC += source.c
-
 # Common configuration
 AUDIO_ENABLE = no
 BACKLIGHT_ENABLE = no
@@ -15,11 +13,14 @@ MAGIC_ENABLE = no
 MOUSEKEY_ENABLE = no
 MUSIC_ENABLE = no
 NKRO_ENABLE = yes
+OLED_DRIVER     = SSD1306
+OLED_ENABLE     = no
 RGBLIGHT_ENABLE = no
 RGB_MATRIX_DRIVER = WS2812
 RGB_MATRIX_ENABLE = no
 SPACE_CADET_ENABLE = no
 SPLIT_KEYBOARD = yes
+VIA_ENABLE = yes
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), crkbd/rev1))
     MOUSEKEY_ENABLE = yes
@@ -34,3 +35,5 @@ endif
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), kbdfans/kbd75/rev1))
     SPLIT_KEYBOARD = no
 endif
+
+SRC += source.c
