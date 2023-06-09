@@ -163,7 +163,7 @@
       "KC_END",
       "KC_NO",
       "KC_NO",
-      "KC_TRNS",
+      "ANY(QK_SWAP_HANDS_TOGGLE)",
       "KC_NO",
       "KC_NO",
       "KC_NO",
