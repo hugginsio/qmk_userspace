@@ -3,6 +3,7 @@
 
 # Common configuration
 AUDIO_ENABLE = no
+AVR_USE_MINIMAL_PRINTF = yes
 BACKLIGHT_ENABLE = no
 BOOTMAGIC_ENABLE = no
 COMMAND_ENABLE = no
@@ -22,6 +23,7 @@ RGB_MATRIX_DRIVER = WS2812
 RGB_MATRIX_ENABLE = no
 SPACE_CADET_ENABLE = no
 SPLIT_KEYBOARD = yes
+VIAL_ENABLE = no
 VIA_ENABLE = no
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), crkbd/rev1))

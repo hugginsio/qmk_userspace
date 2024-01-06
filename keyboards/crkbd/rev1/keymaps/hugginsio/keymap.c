@@ -28,4 +28,50 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
   ),
+  [4] = LAYOUT_split_3x6_3(
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO)
 };
+
+// Current layer determines trackball color
+layer_state_t layer_state_set_user(layer_state_t state) {
+  switch (get_highest_layer(state)) {
+    case 0:
+      pimoroni_trackball_set_rgbw(255, 175, 70, 0);
+      break;
+    case 1:
+      pimoroni_trackball_set_rgbw(255, 0, 0, 0);
+      break;
+    case 2:
+      pimoroni_trackball_set_rgbw(0, 255, 0, 0);
+      break;
+    case 3:
+      pimoroni_trackball_set_rgbw(0, 0, 0, 255);
+      break;
+  }
+
+  return state;
+}
+
+void keyboard_post_init_user(void) {
+  pimoroni_trackball_set_rgbw(255, 175, 70, 0);
+}
+
+void suspend_power_down_user(void) {
+  pimoroni_trackball_set_rgbw(0, 0, 0, 0);
+}
+
+void suspend_wakeup_init_user(void) {
+  pimoroni_trackball_set_rgbw(255, 175, 70, 0);
+}
+
+uint16_t keycode_config(uint16_t keycode) {
+  return keycode;
+}
+
+uint8_t mod_config(uint8_t mod) {
+  return mod;
+}
+
