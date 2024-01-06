@@ -1,0 +1,27 @@
+# https://editorconfig.org/
+
+root = true
+
+[*]
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 4
+
+[{qmk,*.py}]
+charset = utf-8
+max_line_length = 200
+
+[*.mk]
+indent_style = tab
+
+[Makefile]
+indent_style = tab
