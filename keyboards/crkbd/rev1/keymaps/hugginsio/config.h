@@ -1,5 +1,5 @@
 // Copyright (c) Kyle Huggins
-// SPDX-License-Identifier: GPL-2.0+
+// SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
 

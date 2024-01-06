@@ -1,5 +1,5 @@
 // Copyright (c) Kyle Huggins
-// SPDX-License-Identifier: GPL-2.0+
+// SPDX-License-Identifier: GPL-2.0-or-later
 
 // Common space saving config (https://docs.qmk.fm/#/squeezing_avr?id=configh-settings)
 #define LAYER_STATE_8BIT

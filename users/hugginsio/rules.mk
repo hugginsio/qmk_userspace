@@ -1,5 +1,5 @@
 # Copyright (c) Kyle Huggins
-# SPDX-License-Identifier: GPL-2.0+
+# SPDX-License-Identifier: GPL-2.0-or-later
 
 # Common configuration
 AUDIO_ENABLE = no
@@ -32,10 +32,15 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), crkbd/rev1))
 	POINTING_DEVICE_ENABLE = yes
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), keebio/iris/rev6))
-	NKRO_ENABLE = no
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), drop/thekey/v2))
+	MAGIC_ENABLE = yes
+	SPLIT_KEYBOARD = no
 endif
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), kbdfans/kbd75/rev1))
 	SPLIT_KEYBOARD = no
+endif
+
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), keebio/iris/rev6))
+	NKRO_ENABLE = no
 endif
